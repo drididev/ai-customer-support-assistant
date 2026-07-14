@@ -3,9 +3,9 @@
 ```mermaid
 flowchart TD
 
-A[Customer] --> B[Chat Interface(Website / Mobile App)]
+A[Customer] --> B[Chat Interface Website / Mobile App]
 
-B --> C[Python Backend (FastAPI)]
+B --> C[Python Backend FastAPI]
 
 C --> D[RAG System]
 D --> G[Documents]
