@@ -3,22 +3,37 @@
 ```mermaid
 flowchart TD
 
-A[Customer] --> B[Chat Interface Website / Mobile App]
+CUS[Customer] --> FRONTEND[Chat Interface]
 
-B --> C[Python Backend FastAPI]
+FRONTEND --> BACKEND[FastAPI Backend]
 
-C --> D[RAG System]
-D --> G[Documents]
-G --> H[LLM API]
-H --> I[Final Response]
+BACKEND --> AUTH[Authentication]
 
-I --> A
+AUTH --> USERDB[User Database]
 
-C --> E[Tools]
-E --> N[Order API]
 
-C --> F[Business Rules]
-F --> M[Permissions]
+BACKEND --> HIST[Conversation]
+
+HIST --> HISTDB[Chat History]
+
+BACKEND --> ORCH[AI Orchestrator]
+
+ORCH --> LLM[LLM]
+
+LLM --> RAG[RAG]
+
+RAG --> VECDB[Vector DB]
+
+LLM --> TOOLS[TOOLS / API]
+
+TOOLS --> ERP[ERP / CRM]
+
+LLM --> GUARD[Guardrails]
+
+GUARD --> VALD[Validation]
+
+
+
 
 
 
